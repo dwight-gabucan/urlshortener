@@ -30,7 +30,7 @@ def your_url():
             f = request.files["file"]
             full_name = request.form["code"] + secure_filename(f.filename) 
             f.save("./" + full_name)
-            urls[request.form['code']] = {"file":full_name]}       
+            urls[request.form['code']] = {"file":full_name}       
         
         with open("urls.json","w") as urls_file:
             json.dump(urls, urls_file)
