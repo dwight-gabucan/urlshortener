@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, abort
 import json
 import os.path
 from werkzeug.utils import secure_filename
@@ -48,3 +48,6 @@ def redirect_to_url(code):
                     return redirect(urls[code]["url"])
                 else:
                     return redirect(url_for("static",filename="user_files/" + urls[code]["file"]))
+
+    
+    return abort(404)
