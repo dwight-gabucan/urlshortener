@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h1>URL Shortener</h1>
 {% for message in get_flashed_messages() %}
 <h2>{{ message}}</h2>
@@ -31,3 +35,6 @@
     {% endfor %}
 </ul>
 {% endif %}
+
+
+{% endblock main %}
